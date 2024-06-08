@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { SlArrowLeftCircle, SlArrowRightCircle } from "react-icons/sl";
 function Carousel({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -12,9 +13,11 @@ function Carousel({ images }) {
 
   return (
     <div className="carousel">
-      <button onClick={handlePrev}>Left</button>
+      <button onClick={handlePrev}><SlArrowLeftCircle />
+      </button>
       <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-      <button onClick={handleNext}>Right</button>
+      
+      <button onClick={handleNext}><SlArrowRightCircle/></button>
     </div>
   );
 }
